@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './styles.css'
 
 import Button from '../Button/Button';
 
@@ -15,7 +16,7 @@ class Calculator extends Component {
   renderButtons() {
     const operations = ['AC','sqRoot','%','/','7','8','9','*','4','5','6','-','1','2','3','+','0','.','='];
     return operations.map(operation => {
-      return <Button onClick={this.handleOpteration} operation={operation} />
+      return <Button key={operation} onClick={this.handleOpteration} operation={operation} />
     })
   }
 
@@ -26,9 +27,9 @@ class Calculator extends Component {
 
   render() {
     return (
-      <div>
+      <figure className="calculator">
         {this.renderButtons()}
-      </div>
+      </figure>
     );
   }
 
